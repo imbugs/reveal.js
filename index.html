@@ -4,15 +4,13 @@
 	<head>
 		<meta charset="utf-8">
 		
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>如何写用例</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="本文主要介绍如何使用JUnit进行用例的编写">
+		<meta name="author" content="tinghe">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-		
-		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 		
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/theme/default.css" id="theme">
@@ -20,275 +18,467 @@
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<script>
-			// If the query includes 'print-pdf' we'll use the PDF print sheet
-			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
+	    <script type="text/javascript" src="lib/lightbox-0.5/js/jquery.js"></script>
+	    <script type="text/javascript" src="lib/lightbox-0.5/js/jquery.lightbox-0.5.js"></script>
+	    <link rel="stylesheet" type="text/css" href="lib/lightbox-0.5/css/jquery.lightbox-0.5.css" media="screen" />
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
+		<script type="text/javascript">
+		$(function() {
+			$('#gallery a').lightBox();
+		});
+		</script>
+	    <style type="text/css">
+   		/* jQuery lightBox plugin - Gallery style */
+   		#gallery {
+   		    background-color: #444;
+   		    padding: 10px;
+   		}
+   		#gallery ul { list-style: none; }
+   		#gallery ul li { display: inline; }
+   		#gallery ul img {
+   		    border: 5px solid #3e3e3e;
+   		    border-width: 5px 5px 20px;
+   		}
+   		#gallery ul a:hover img {
+   		    border: 5px solid #fff;
+   		    border-width: 5px 5px 20px;
+   		    color: #fff;
+   		}
+   		#gallery ul a:hover { color: #fff; }
+   		</style>
+
 	</head>
 	
 	<body>
 		
 		<div class="reveal">
-
-			<!-- Used to fade in a background when a specific slide state is reached -->
 			<div class="state-background"></div>
-			
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
+					<h1>如何写用例</h1>
+					<h3>by: 廷和</h3>
 				</section>
 				
 				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with 
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-					<p>
-						<i><small>- <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small></i>
-					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you run the speaker notes server.
-					</aside>
-				</section>
-				
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#/2/1">down</a>.
-						</p>
-						<a href="#/2/1" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Holistic Overview</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview!
-					</p>
-				</section>
-
-				<section>
-					<h2>rvl.io</h2>
-					<p>
-						If you don't like writing slides in HTML you can use the online editor <a href="http://www.rvl.io" target="_blank">rvl.io</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides pinch your way to the overview.
-					</p>
-				</section>
-
-				<section>
-					<h2>Marvelous Unordered List</h2>
+					<h2>开始自动化</h2>
 					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
+						<li>自动化就是用机器代替人工</li>
+						<li>自动化是要重复执行的</li>
+						<li>自动化测试是用来发现问题的</li>
 					</ul>
 				</section>
 				
 				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section data-markdown>
-					## Markdown support
-					
-					For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-					<pre><code contenteditable style="margin-top: 20px;">&lt;section data-markdown&gt;
-  ## Markdown support
-
-  For those of you who like that sort of thing. 
-  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-&lt;/section&gt;
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="http://lab.hakim.se/reveal-js/?transition=cube">Cube</a> -
-						<a href="http://lab.hakim.se/reveal-js/?transition=page">Page</a> -
-						<a href="http://lab.hakim.se/reveal-js/?transition=concave">Concave</a> -
-						<a href="http://lab.hakim.se/reveal-js/?transition=linear">Linear</a>
-					</p>
-				</section>
-
-				<section>
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="http://lab.hakim.se/reveal-js/?theme=sky">Sky</a> -
-						<a href="http://lab.hakim.se/reveal-js/?theme=beige">Beige</a> -
-						<a href="http://lab.hakim.se/reveal-js/?theme=simple">Simple</a> -
-						<a href="http://lab.hakim.se/reveal-js/">Default</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
-				</section>
-
-				<section>
-					<section data-state="alert">
-						<h2>Global State</h2>
-						<p>
-							Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-							will be added as a class to the document element when the slide is open. This lets you
-							apply broader style changes, like switching the background.
-						</p>
-						<a href="#/7/1" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+					<section>
+						<h2>支付宝的自动化</h2>
+						<ul>
+							<li>单元测试</li>
+							<li>接口自动化</li>
+							<li>页面自动化</li>
+						</ul>
 					</section>
-					<section data-state="blackout">
-						<h2>"blackout"</h2>
-						<a href="#/7/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+					<section>
+						<h2>单元测试的特点</h2>
+						<ul>
+							<li>由开发人员编写</li>
+							<li>验证自已的代码或模块功能正确性</li>
+							<li>没有统一的标准</li>
+							<li>代码稳定性好</li>
+							<li>粒度比较细</li>
+							<li>覆盖率容易控制</li>
+						</ul>
 					</section>
-					<section data-state="soothe">
-						<h2>"soothe"</h2>
-						<a href="#/7/0" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
+					<section>
+						<h2>接口测试的特点</h2>
+						<ul>
+							<li>测试人员编写</li>
+							<li>框架统一</li>
+							<li>数据驱动</li>
+							<li>主要针对接口测试</li>
+						</ul>
+					</section>
+					<section>
+						<h2>页面自动化的特点</h2>
+						<p>(略)</p>
 					</section>
 				</section>
 
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
+				<section>
+					<h2>我们怎么玩自动化？</h2>
+					<ul>
+						<li>类似于单元测试</li>
+						<li>ATS测试框架</li>
+						<li>基于JUnit</li>
+						<li>没有统一的粒度</li>
+					</ul>
 				</section>
 
 				<section>
-					<h2>Clever Quotes</h2>
+					<h2>进入正题</h2>
 					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						The nice thing about standards is that there are so many to choose from</q> and block:
+						<img with="300px" height="200px" src="img/arrow-right.jpg"></img>
 					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						For years there has been a theory that millions of monkeys typing at random on millions of typewriters would 
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.
-					</blockquote>
 				</section>
-				
+
 				<section>
-					<h2>Pretty Code</h2>
-					<pre><code contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-    
-    var nodes = document.querySelectorAll( selector );
+					<section>
+					<h2>你好，JUnit3</h2>
+					<pre><code contenteditable style="margin-top: 20px;">
+import junit.framework.TestCase;
 
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
+public class HellowJUnit extends TestCase {
+    protected String hello;
 
-      if( !node.className ) ) {
-        node.className += ' roll';
-      }
-    };
-  }
+    public void setUp() {
+        hello = "Hellow, JUnit!";
+    }
+
+    public void testJUnit() {
+        System.out.println(hello);
+    }
+
+    public void tearDown() {
+        System.out.println("so easy!");
+    }
 }
 					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+					</section>
+					<section>
+					<h2>你好，JUnit4</h2>
+					<pre><code contenteditable style="margin-top: 20px;">
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class HellowJUnit {
+    protected String hello;
+
+    @Before
+    public void init() {
+        hello = "Hellow, JUnit!";
+    }
+
+    @Test
+    public void junit4() {
+        System.out.println(hello);
+    }
+
+    @After
+    public void say() {
+        System.out.println("too easy!");
+    }
+}
+
+					</code></pre>
+					</section>
 				</section>
 				
 				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
+					<section>
+					<h2>让测试代码稳定</h2>
+					<ul>
+						<li>数据初始化</li>
+						<li>减少用例间依赖</li>
+						<li>用例间数据与配置隔离(减少共用)</li>
+						<li>解决环境问题</li>
+					</ul>
+					</section>
+					<section>
+					<h2>数据初始化</h2>
+					<pre><code contenteditable style="margin-top: 20px; width: 960px;">
+private static Logger        logger = Logger.getLogger(HellowJUnit.class);
+protected ApplicationContext context;
+protected DataSource         dataSource;
+protected Connection         connection;
+protected String             configRoot;
+
+@Before
+public void init() {
+    // 配置信息初始化
+    configRoot = "src/test/resources/";
+    // 属性与变量初始化
+    context = new ClassPathXmlApplicationContext(configRoot + "devdb.xml");
+    dataSource = (DataSource) context.getBean("dataSource");
+    // 数据库初始化
+    try {
+        ConnectionManager.setConnection(dataSource.getConnection());
+        ImportDataToDB.importDataFromXml(configRoot + "data.xml");
+    } catch (Exception e) {
+        logger.error("数据初始化失败.", e);
+    }
+}
+					</code></pre>
+					</section>
+					<section style="margin: -100px 0 0 0;">
+					<h2 style="">减少用例依赖</h2>
+					<pre><code contenteditable style="margin-top: 20px; width: 960px;">
+ // 向数据库中插入一条数据
+@Test
+public void testInsert() {
+    try {
+        Statement stat = connection.createStatement();
+        stat.executeUpdate("insert into employee(id, email, name) values (1,'tinghe@alipay.com','tinghe')");
+        stat.close();
+    } catch (SQLException e) {
+        logger.error("数据初始化失败.", e);
+    }
+}
+					</code></pre>
+					<pre><code contenteditable style="margin-top: 20px; width:960px;">
+// 更新数据库的一条数据
+@Test
+public void testUpdate() {
+    try {
+        Statement stat = connection.createStatement();
+        stat.executeUpdate("update employee set name='廷和' where id=1");
+        stat.close();
+    } catch (SQLException e) {
+        logger.error("数据初始化失败.", e);
+    }
+}
+					</code></pre>
+					</section>
+					<section>
+					<h2>解决环境问题</h2>
+					<ul>
+						<li>代码跨平台可用</li>
+						<small>
+						<ul>
+							<li>尽量使用相对文件路径</li>
+							<li>使用JDK提供的文件与路径分隔符</li>
+							<pre><code contenteditable style="margin-top: 20px; margin-left: -20px; padding: 0 0 0 0;">
+/* Unix ':', Windows ';' */
+String sep1 = File.<font color='#6CAAD9'><em>pathSeparator</em></font>;
+/* Linux '/', Windows '\' */
+String sep2 = File.<font color='#6CAAD9'><em>separator</em></font>; 
+							</code></pre>
+							<li>注意文件与路径<font color="yellow">大小写</font></li>
+							<li>使用系统环境变量</li>
+							<li>尽量使用'/'而不是'\'</li>
+						</ul>
+						</small>
+						<li>合理使用Mock</li>
+						<small>
+						<ul>
+							<li>可适当Mock掉外部接口调用</li>
+							<li>可简单的切换到没有Mock的状态</li>
+							<li>尽量少用</li>
+						</ul>
+						</small>
+					</ul>
+					</section>
 				</section>
 
 				<section>
-					<h2>Fragmented Views</h2>
-					<p>Hit the next arrow...</p>
-					<p class="fragment">... to step through ...</p>
-					<ol>
-						<li class="fragment"><code>any type</code></li>
-						<li class="fragment"><em>of view</em></li>
-						<li class="fragment"><strong>fragments</strong></li>
-					</ol>
-				</section>
-				
-				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://hakim.se/experiments/html5/breakdom/" target="_blank">
-						<img width="320" height="412" src="https://s3.amazonaws.com/hakim-static/reveal-js/breakdom.png" alt="BreakDOM game screenshot">
-					</a>
-				</section>
-				
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
-					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
-					<script>
-						document.getElementById('slideshare').attributeName = 'allowfullscreen';
-					</script>
-				</section>
-				
-				<section>
-					<h2>Stellar Links</h2>
+					<section>
+					<h2>让测试代码可读</h2>
 					<ul>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on github</a></li>
-						<li><a href="http://hakim.se/projects/reveal-js">Read more on my site</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
+						<li>注释</li>
+						<li>代码规范</li>
+						<li>格式化</li>
 					</ul>
+					</section>
+					<section style="margin: -150px 0 0 0;">
+					<h2>注释<small><a href="http://qa.inc.alipay.net/blog/?p=899" target="_blank">Blog</a></small></h2>
+					<small>对于类或接口的注释</small>
+					<pre><code contenteditable style="margin-top: 20px; width:960px;">
+/**
+ * &lt;p&gt;类或接口的说明&lt;/p&gt;
+ *
+ * @author 作者
+ * @version $Id: 文件名.java,版本号 日期 时间 作者 Exp $
+ */
+					</code></pre>
+					<small>对于方法的注释</small>
+					<pre><code contenteditable style="margin-top: 10px; width:960px;">
+ /**
+  * 方法的说明
+  * &lt;pre&gt;较详细的说明&lt;/pre&gt;
+  * @param 参数1
+  * @param 参数2
+  * @return 返回值
+  */
+					</code></pre>
+					<small>在程序中的注释</small>
+					<pre><code contenteditable style="margin-top: 10px; width:960px;">
+/* 数据源 */
+protected DataSource         dataSource;
+// 配置文件根目录
+protected String             configRoot;
+					</code></pre>
+					<small><blockquote style="width:300px;">
+					<font color='yellow'>不使用的注释需要删除</font>
+					</blockquote></small>
+
+					</section>
+					<section>
+					<h2>代码规范化</h2>
+					<ol>
+						<li>使用ATS框架，并遵守框架规范，结构统一</li>
+						<li>类，方法，变量，常量命名规范易懂</li>
+						<li>注释清晰，及时更新，（好注释>无注释>差注释）</li>
+						<li>代码模块化，抽象出工具类</li>
+						<li>使用日志，避免System.out，e.printStackTrace()</li>
+						<li>减少Eclipse Warnings</li>
+						<li>减少静态扫描工具Warnings</li>
+					</ol>
+					</section>
+					<section>
+					<h2>代码格式化</h2>
+					<ul>
+						<li>使用
+							<a href="http://atit.alipay.net/sites/default/files/userdownload/software/AlipayFormatter.xml">AlipayFormatter.xml</a>
+						</li>
+						<li>代码模板
+							<a href="http://atit.alipay.net/sites/default/files/userdownload/software/AlipayCodeTemplates.xml">AlipayCodeTemplates.xml</a>
+						</li>
+						<li>Ctrl+Shift+F</li>
+					</ul>
+					<div id="gallery">
+						<ul>
+							<li>
+								<a href="img/eclipse-format.png" title="Eclipse设置Formatter">
+									<img src="img/eclipse-format.png" width="72" height="72" alt="" />
+								</a>
+							</li>
+							<li>
+								<a href="img/alipayformatter.png" title="导入AlipayFormatter.xml">
+									<img src="img/alipayformatter.png" width="72" height="72" alt="" />
+								</a>
+							</li>
+							<li>
+								<a href="img/codeformat.png" title="Eclipse设置代码模板">
+									<img src="img/codeformat.png" width="72" height="72" alt="" />
+								</a>
+							</li>
+							<li>
+								<a href="img/alipaycodeformat.png" title="导入AlipayCodeTemplates.xml">
+									<img src="img/alipaycodeformat.png" width="72" height="72" alt="" />
+								</a>
+							</li>
+							<li>
+								<a href="img/auto-save-action.png" title="保存时自动格式化Formatter">
+									<img src="img/auto-save-action.png" width="72" height="72" alt="" />
+								</a>
+							</li>
+						</ul>
+					</div>
+					</section>
 				</section>
-				
+
+				<section>
+					<section>
+					<h2>让测试代码高效</h2>
+					<ul>
+						<li>合理使用基类</li>
+						<li>创建工具类</li>
+						<li>用例测试点单一化</li>
+						<li>断言合理性</li>
+					</ul>
+					</section>
+					<section>
+						<h2>基类可以干啥？</h2>
+						<ul>
+							<li>调用<b>频繁</b>的公用方法</li>
+							<li>使用<b>频繁</b>的公共变量或属性</li>
+							<li>必须写在基类中的代码</li>
+							<li>工具类最好专门建立一个类</li>
+						</ul>
+						<small><blockquote>
+						<font color='yellow'>如无必要，不要往基类里写入太多东西，基类的东西越多，代码越难看懂</font>
+						</blockquote></small>
+					</section>
+					<section>
+					<h2>多用工具类</h2>
+					<ul>
+						<li>StringUtils</li>
+						<li>FileUtils</li>
+						<li>MockUtils</li>
+						<li>DBUtils</li>
+						<li>ConfigUtils</li>
+						<li>...</li>
+					</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+					<h2>正确使用断言<small><a href="http://qa.inc.alipay.net/blog/?p=951" target="_blank">Blog</a></small></h2>
+					<ul>
+						<li>断言是为了检测实际结果是否与预期结果一致</li>
+						<li>断言需要能够反应测试结果</li>
+						<li>断言能够被JUnit用来进行处理</li>
+					</ul>
+					</section>
+					<section>
+					<h2>断言用来干什么</h2>
+					<pre><code contenteditable style="margin-top: 20px;">
+@Test
+public void testAssert() {
+    try {
+        Assert.assertTrue("哥不是传说，哥是一个断言", false);
+    } catch (Exception e) {
+        logger.info("哥能让断言成为传说");
+    }
+}
+					</code></pre>
+					<small class="fragment"><blockquote style="width:300px;">
+					<font color="yellow">断言是用来抛出异常的</font>
+					</blockquote></small>
+					</section>
+					<section>
+					<h2>分支语句</h2>
+					<pre><code contenteditable style="margin-top: 20px;">
+Result  result = service.getResult();
+if(result.isSuccess())
+{
+    // 只有这条分支有断言
+    assertEquals(exceptValue,result.getCode());
+}
+else{
+    log.info("没有断言，哥很寂寞");
+}
+					</code></pre>
+					<small class="fragment"><blockquote style="width:800px;">
+					<font color="yellow">尽量所有分支都包含断言，避免造成用例顺利通过的假象</font>
+					</blockquote></small>
+					</section>
+					<section>
+					<h2>循环语句</h2>
+					<pre><code contenteditable style="margin-top: 20px;">
+List&lt;String> result = service.getListResult();
+
+<span class="fragment">Assert.assertTrue("竟敢忘了哥", result.size() > 0);</span>
+for(int i = 0; i &lt; result.size(); i ++){
+	// 哥躲在循环里
+	assertEquals("expect",result.get(0).toString());
+}
+					</code></pre>
+					<small class="fragment"><blockquote style="width:800px;">
+					<font color="yellow">应该让每次循环都包含断言，循环之外也应该设置断言</font>
+					</blockquote></small>
+					</section>
+					<section>
+					<h2>断言哪些内容？</h2>
+					<ul>
+						<li>数据库中的数据</li>
+						<li>调用返回值</li>
+						<li>输出的文件和日志</li>
+					</ul>
+					<p>
+					<small><blockquote style="width:500px;">
+					<font color="yellow">不能出现问题的地方就应该进行断言</font>
+					</blockquote></small>
+					</p>
+					</section>
+				</section>
+
 				<section>
 					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
+					<h3>BY tinghe</h3>
 				</section>
 			</div>
 
@@ -326,8 +516,8 @@ function linkify( selector ) {
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
-					{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+					{ src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:8080'; } },
+					{ src: 'js/client.js', async: true, condition: function() { return window.location.host === 'localhost:8080'; } },
 				]
 			});
 			
